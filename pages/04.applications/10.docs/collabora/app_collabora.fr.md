@@ -13,11 +13,25 @@ routes:
 
 ### Index
 
+- [Configurer Collabora Online avec Nextcloud](#configurer-collabora-online-avec-nextcloud)
+- [Architectures ARM](#architectures-arm)
 - [Liens utiles](#liens-utiles)
 
 Collabora est une suite bureautique en ligne basée sur LibreOffice et utilisable avec Nextcloud ou ownCloud. Elle permet d'éditer des documents textes, des tableaux, des diaporamas. L'édition en ligne peut se faire en simultanée et permet d'exporter et d'imprimer des documents grâce au format PDF généré.
 
-Cette application n'est pas compatible avec les architectures ARM. Le projet Collabora a bien développé une version spécifique ARM, mais celle-ci n'est compatible qu'avec Ubuntu, pas Debian, donc ne fonctionne pas sous YunoHost.
+Cette application n'est pas compatible avec les architectures ARM. Le projet Collabora a bien développé une version spécifique ARM, mais celle-ci n'est compatible qu'avec Ubuntu, pas Debian, donc ne fonctionne pas sous YunoHost (Voir ci-dessous pour une solution)
+
+## Configurer Collabora Online avec Nextcloud
+
+1. Installer [Collabora Online pour YunoHost](https://github.com/YunoHost-Apps/collabora_ynh) dans un domaine différent de celui utilisé par Nextcloud : `https://bureau.domain.org` (par exemple)
+
+2. Installer [Nextcloud Office](https://apps.nextcloud.com/apps/richdocuments) dans Nextcloud
+- Connectez-vous à Nextcloud en tant qu'administrateur et installer Nextcloud Office : -> Applications -> installez Nextcloud Office.
+- Dans Paramètres -> Nextcloud Office, choisissez "Utiliser votre propre serveur", entrez l'adresse de votre serveur Collabora Online (par exemple : `https://bureau.domain.org`)
+
+Collabora Online est maintenant connecté à Nextcloud.
+
+**Attention : Nextcloud doit-être accèssible aux _visiteurs_ pour que la validation WOPI de Collabora Online fonctionne**
 
 ### Architectures ARM
 
